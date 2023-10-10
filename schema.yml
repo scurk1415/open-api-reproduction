@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: API schema
+  license:
+    name: MIT
+paths:
+  /test:
+    get:
+      summary: Test Endpoint
+      tags:
+        - test
+      operationId: getTest
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Test'
+components:
+  schemas:
+    Test:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
